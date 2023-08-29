@@ -71,7 +71,7 @@ const createProduct = asyncHandler(async (req, res) => {
   if (quantity < maxQuantity / 2) {
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,  // Replace with the recipient's email
+      to: ["tusharbhatia1003@gmail.com","tripathis@indianoil.in","saxenah2@indianoil.in"], // Replace with the recipient's email
       subject: 'Low Quantity Alert',
       text: `The product "${name}" has a low quantity. Current quantity: ${quantity} and max quantity is: ${maxQuantity}`,
     };
