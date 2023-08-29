@@ -47,7 +47,7 @@ exports.addIncomingTransaction = async (req, res) => {
     if (product.quantity < product.maxQuantity / 2) {
         const mailOptions = {
           from: process.env.EMAIL_USER,
-          to: process.env.EMAIL_USER,  // Replace with the recipient's email
+          to: ["tusharbhatia1003@gmail.com","tripathis@indianoil.in","saxenah2@indianoil.in"],  // Replace with the recipient's email
           subject: 'Low Quantity Alert',
           text: `The product "${product.name}" has a low quantity. Current quantity: ${product.quantity} and max quantity is: ${product.maxQuantity}`,
         };
