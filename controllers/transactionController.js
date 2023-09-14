@@ -49,7 +49,20 @@ exports.addIncomingTransaction = async (req, res) => {
           from: process.env.EMAIL_USER,
           to: ["tusharbhatia1003@gmail.com","tripathis@indianoil.in","saxenah2@indianoil.in"],  // Replace with the recipient's email
           subject: 'Low Quantity Alert',
-          text: `The product "${product.name}" has a low quantity. Current quantity: ${product.quantity} and max quantity is: ${product.maxQuantity}`,
+         html: `
+      <h2>Low Quantity Alert</h2>
+      <p>The product "${product.name}" is running low on stock. Here are the details:</p>
+      <ul>
+        <li><strong>Name:</strong> ${product.name}</li>
+        <li><strong>Category:</strong> ${product.category}</li>
+        <li><strong>Subcategory:</strong> ${product.subcategory}</li>
+        <li><strong>Quantity:</strong> ${product.quantity}</li>
+        <li><strong>Maximum Quantity:</strong> ${product.maxQuantity}</li>
+        <li><strong>Description:</strong> ${product.description}</li>
+      </ul>
+      <p>Product Image:</p>
+      <img src="${product.image.filePath}" alt="Product Image" />
+    `,
         };
        
         try {
